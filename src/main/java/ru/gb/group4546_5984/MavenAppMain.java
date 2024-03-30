@@ -24,5 +24,11 @@ public class MavenAppMain {
 
         Person personFromGson = gson.fromJson(personToGson, Person.class);
         System.out.println("\nДесериализованная персона:\n" + personFromGson);
+
+        boolean isEqual = person.equals(personFromGson);
+        System.out.println("\nОбъекты до сериализации и после сериализации равны: " + isEqual);
+
+        isEqual = person.hashCode() == personFromGson.hashCode();
+        System.out.println("\nХэшкоды бъектов до сериализации и после сериализации равны: " + isEqual);
     }
 }
